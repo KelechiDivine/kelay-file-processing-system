@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Database {
 	
@@ -22,5 +23,13 @@ public class Database {
 
 	public ArrayList<PlatinumMember> getPlatinumMembers() {
 		return platinumMembers;
+	}
+
+	public ArrayList<Member> getMembers() {
+		ArrayList<Member> members = new ArrayList<>();
+		members.addAll(goldMembers);
+		members.addAll(silverMembers);
+		members.addAll(platinumMembers);
+		return members;
 	}
 }

@@ -38,18 +38,26 @@ class FileProcessingSystemTest {
 	}
 
 	@Test
-	void silverMemberFileShouldBeInDataBase(){
+	void databaseHasSilverMemberFilesCategory(){
 		//when
 		ArrayList<SilverMember> sms = fps.getDatabase().getSilverMembers();
 		//assert
 		assertNotNull(sms);
 		assertEquals(0,sms.size());
 	}
+
 	@Test
-	void platinumMemberFileShouldBeInDatabase(){
+	void databaseHasPlatinumMemberFilesCategory(){
 		//when
 		ArrayList<PlatinumMember> pms = fps.getDatabase().getPlatinumMembers();
 		assertNotNull(pms);
 		assertEquals(0, pms.size());
+	}
+
+	@Test
+	void databaseHasFiles(){
+		ArrayList<Member> members = fps.getDatabase().getMembers();
+		assertNotNull(members);
+		assertEquals(0, members.size());
 	}
 }
