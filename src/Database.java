@@ -2,28 +2,25 @@ import java.util.ArrayList;
 
 public class Database {
 	
-	private ArrayList<Member> goldMembers;
-	private ArrayList<Member> platinumMembers;
-	private ArrayList<Member> silverMembers;
-	
-	{
+	private final ArrayList<GoldMember> goldMembers;
+	private final ArrayList<SilverMember> silverMembers;
+	private final ArrayList<PlatinumMember> platinumMembers;
+
+	public Database() {
 		goldMembers = new ArrayList<>();
-	}
-	
-	public ArrayList<Member> getGoldMembers() {
-		return goldMembers;
-	}
-	{
+		silverMembers = new ArrayList<>();
 		platinumMembers = new ArrayList<>();
 	}
-		public ArrayList<Member> getSilverMembers () {
-			return silverMembers;
-		
+	
+	public ArrayList<GoldMember> getGoldMembers() {
+		return goldMembers;
 	}
-	{
-		silverMembers = new ArrayList<>();
+
+	public ArrayList<SilverMember> getSilverMembers() {
+		return silverMembers;
 	}
-	public ArrayList<Member> getPlatinumMembers() {
+
+	public ArrayList<PlatinumMember> getPlatinumMembers() {
 		return platinumMembers;
 	}
 }

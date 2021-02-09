@@ -31,24 +31,25 @@ class FileProcessingSystemTest {
 	@Test
 	void databaseHasGoldMemberFilesCategory(){
 		//when
-		ArrayList<Member> gms = fps.getDatabase().getGoldMembers();
+		ArrayList<GoldMember> gms = fps.getDatabase().getGoldMembers();
 		//assert
 		assertNotNull(gms);
 		assertEquals(0, gms.size());
 	}
+
 	@Test
 	void silverMemberFileShouldBeInDataBase(){
 		//when
-		ArrayList<Member> slm = fps.getDatabase().getSilverMembers();
+		ArrayList<SilverMember> sms = fps.getDatabase().getSilverMembers();
 		//assert
-		assertNotNull(slm);
-		assertEquals(0,slm.size());
+		assertNotNull(sms);
+		assertEquals(0,sms.size());
 	}
 	@Test
 	void platinumMemberFileShouldBeInDatabase(){
 		//when
-		ArrayList<Member> plm = fps.getDatabase().getPlatinumMembers();
-		assertNotNull(plm);
-		assertEquals(0, plm.size());
+		ArrayList<PlatinumMember> pms = fps.getDatabase().getPlatinumMembers();
+		assertNotNull(pms);
+		assertEquals(0, pms.size());
 	}
 }

@@ -1,6 +1,6 @@
 public class FileProcessingSystem {
 	
-	private Database database;
+	private final Database database;
 	
 	public FileProcessingSystem(){
 		database = new Database();

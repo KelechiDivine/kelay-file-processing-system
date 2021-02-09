@@ -1,9 +1,2 @@
-class GoldMember {
-	
-	private GoldMember goldMember;
-	
-	public GoldMember() {
-		GoldMember goldMember = new GoldMember();
-	}
-	
+public class GoldMember extends Member {
 }
