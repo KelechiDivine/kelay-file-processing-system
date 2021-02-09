@@ -13,7 +13,7 @@ class FileProcessingSystemTest {
 	@AfterEach
 	void tearDown() {
 	}
-	
+
 	@Test
 	void systemHasADatabase(){
 		//given
