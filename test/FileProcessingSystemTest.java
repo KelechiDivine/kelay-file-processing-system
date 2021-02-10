@@ -9,10 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileProcessingSystemTest {
 	
 	FileProcessingSystem fps;
+	File file;
 	
 	@BeforeEach
 	void setUp() {
 		fps = new FileProcessingSystem();
+		file = new File();
 	}
 	
 	@AfterEach
@@ -60,4 +62,41 @@ class FileProcessingSystemTest {
 		assertNotNull(members);
 		assertEquals(0, members.size());
 	}
+
+	@Test
+	void file_has_anId() {
+		assertNotEquals(0, file.getId());
+	}
+
+	@Test
+	void file_has_pages() {
+		assertNotNull(file.getPages());
+	}
+
+	@Test
+	void page_canBe_addedToFile() {
+		file.getPages().add(new Page());
+		assertEquals(1, file.getPages().size());
+	}
+
+	@Test
+	void page_canBe_writtenTo_Read_andUpdated() {
+		Page page = new Page("Day 1", "Just dey lavish");
+		assertEquals("Day 1", page.getHeading());
+		assertEquals("Just dey lavish", page.getActivitiesOfTheDay());
+
+		page.setHeading("Na Day 2 ooo");
+		page.setActivitiesOfTheDay("Kasala burst");
+		assertEquals("Na Day 2 ooo", page.getHeading());
+		assertEquals("Kasala burst", page.getActivitiesOfTheDay());
+	}
+
+	@Test
+	void page_canBe_Deleted() {
+		Page page = new Page("Day 1", "Just dey lavish");
+		file.getPages().add(page);
+		file.removePage(page.getNumber());
+		assertFalse(file.getPages().contains(page));
+	}
+
 }
