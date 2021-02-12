@@ -28,4 +28,16 @@ public class File {
         }
         pages.remove(pageToRemove);
     }
+
+    public void addPage(Page page) {
+        pages.add(page);
+    }
+
+    public int getNumberOfPages() {
+        return pages.size();
+    }
+
+    public boolean hasPage(Page page) {
+        return pages.contains(page);
+    }
 }

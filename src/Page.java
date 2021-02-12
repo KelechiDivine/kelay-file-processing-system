@@ -2,25 +2,23 @@ import java.time.LocalDate;
 
 public class Page {
     private int number;
-    private LocalDate localDate;
+    private LocalDate date;
     private String heading;
     private String activitiesOfTheDay;
 
     public Page() {
-        this.number = NumberGenerator.getId();
+        this("", "");
     }
 
     public Page(String heading, String activitiesOfTheDay) {
+        this.number = NumberGenerator.getId();
+        date = LocalDate.now();
         this.heading = heading;
         this.activitiesOfTheDay = activitiesOfTheDay;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public LocalDate getDate() {
+        return date;
     }
 
     public String getHeading() {

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Database {
 	
@@ -12,24 +11,36 @@ public class Database {
 		silverMembers = new ArrayList<>();
 		platinumMembers = new ArrayList<>();
 	}
-	
-	public ArrayList<GoldMember> getGoldMembers() {
-		return goldMembers;
+
+	public GoldMember[] getGoldMembers() {
+		return goldMembers.toArray(new GoldMember[0]);
 	}
 
-	public ArrayList<SilverMember> getSilverMembers() {
-		return silverMembers;
+	public SilverMember[] getSilverMembers() {
+		return silverMembers.toArray(new SilverMember[0]);
 	}
 
-	public ArrayList<PlatinumMember> getPlatinumMembers() {
-		return platinumMembers;
+	public PlatinumMember[] getPlatinumMembers() {
+		return platinumMembers.toArray(new PlatinumMember[0]);
 	}
 
-	public ArrayList<Member> getMembers() {
+	public Member[] getMembers() {
 		ArrayList<Member> members = new ArrayList<>();
 		members.addAll(goldMembers);
 		members.addAll(silverMembers);
 		members.addAll(platinumMembers);
-		return members;
+		return members.toArray(new Member[0]);
+	}
+
+	public void addPlatinumMember(PlatinumMember platinumMember) {
+		platinumMembers.add(platinumMember);
+	}
+
+	public void addGoldMember(GoldMember goldMember) {
+		goldMembers.add(goldMember);
+	}
+
+	public void addSilverMember(SilverMember silverMember) {
+		silverMembers.add(silverMember);
 	}
 }
