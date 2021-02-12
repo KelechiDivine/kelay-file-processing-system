@@ -11,7 +11,7 @@ public class Page {
     }
 
     public Page(String heading, String activitiesOfTheDay) {
-        this.number = NumberGenerator.getId();
+        this.number = NumberGenerator.generate();
         date = LocalDate.now();
         this.heading = heading;
         this.activitiesOfTheDay = activitiesOfTheDay;

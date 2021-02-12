@@ -7,7 +7,7 @@ public class File {
     private final ArrayList<Page> pages;
 
     public File() {
-        id = IdGenerator.getId();
+        id = IdGenerator.generate();
         pages = new ArrayList<>();
     }
 
