@@ -13,23 +13,23 @@ class IdGeneratorTest {
 
     @Test
     void generatedId_isUnique() {
-        int idOne = IdGenerator.generate();
-        int idTwo = IdGenerator.generate();
-        int idThree = IdGenerator.generate();
+        int firstId = IdGenerator.generate();
+        int secondId = IdGenerator.generate();
+        int thirdId = IdGenerator.generate();
         assertTrue(
-                (idTwo != idOne) &&
-                        (idThree != idTwo)
+                (secondId != firstId) &&
+                        (thirdId != secondId)
                 );
     }
 
     @Test
     void generatedId_isAutoIncremented() {
-        int idOne = IdGenerator.generate();
-        int idTwo = IdGenerator.generate();
-        int idThree = IdGenerator.generate();
+        int firstId = IdGenerator.generate();
+        int secondId = IdGenerator.generate();
+        int thirdId = IdGenerator.generate();
         assertTrue(
-                (idTwo - idOne == 1) &&
-                        (idThree - idTwo == 1)
+                (secondId - firstId == 1) &&
+                        (thirdId - secondId == 1)
                 );
     }
 
